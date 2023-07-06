@@ -1,4 +1,4 @@
-package com.company.Summative1MartinezLance.controllers;
+package com.company.Summative1MartinezLance.controller;
 
 import com.company.Summative1MartinezLance.models.Answer;
 import org.springframework.http.HttpStatus;
@@ -29,6 +29,7 @@ public class magicEightBallController {
     @RequestMapping(value = "/magic", method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.CREATED)
     public Answer askEightBallQuestion (@RequestBody (required = false) Answer answer) {
+        // including this incase a user includes nothing in the request body
         if (answer == null) {
             Answer ans = new Answer();
             ans.setQuestion("");
